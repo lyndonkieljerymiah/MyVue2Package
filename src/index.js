@@ -1,3 +1,7 @@
+
+
+window._ = window._ || require('lodash');
+
 import VDialog from "./plugins/containers/VDialog.vue";
 import VTab from "./plugins/containers/VTab.vue";
 import VTabGroup from "./plugins/containers/VTabGroup.vue";
