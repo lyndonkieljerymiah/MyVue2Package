@@ -1,7 +1,7 @@
 # Contributing
 
 ###  Issue reporting
-* If the issue is related to **bootstrap-datetimepicker** then report that issue on [bootstrap-datetimepicker](https://github.com/Eonasdan/bootstrap-datetimepicker/issues) repo instead
+* If the issue is related to **my-vue2-package** then report that issue on [my-vue2-package](https://github.com/lyndonkieljerymiah/MyVue2Package/issues) repo instead
 * Follow ISSUE_TEMPLATE  
 
 ### Pull requests guidelines
@@ -12,7 +12,6 @@
 
 ### Development setup
 * You will need [node-js](http://nodejs.org/) v6.10+ and [yarn](https://yarnpkg.com) v1.x
-* After cloning the repo, run - `yarn install`
 * Make changes in ``src`` folder
 * Write/update test case for the feature/fix you made 
 * You can check if everything is working fine by running tests - `yarn test`
