@@ -4,7 +4,10 @@
   "description": "Vue.js set component",
   "main": "dist/my-vue2-package.js",
   "unpkg": "dist/my-vue2-package.min.js",
-  "repository": {},
+  "repository": {
+    "type":"git",
+    "url": "https://github.com/lyndonkieljerymiah/MyVue2Package.git"
+  },
   "keywords": [
     "vue",
     "bootstrap-tools",
@@ -12,6 +15,10 @@
   ],
   "author": "zee",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lyndonkieljerymiah/MyVue2Package/issues"
+  },
+  "homepage": "https://github.com/lyndonkieljerymiah/MyVue2Package",
   "scripts": {
     "test": "node ./node_modules/jest/bin/jest.js",
     "test:watch": "npm run test -- --watch --onlyChanged --notify",
