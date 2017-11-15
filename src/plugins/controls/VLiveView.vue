@@ -108,7 +108,7 @@
 
 <script>
 
-import { EventBus } from "../../events/events";
+
 import VPagination from "./VPagination";
 
 const axios = window.axios || require('axios');

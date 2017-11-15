@@ -87,4 +87,8 @@ export const copiedValue = (source, target, exclude = new Array()) => {
 }
 
 
+import Vue from 'vue';
+
+import {EventBus} from "./events/events";
+
 export default MyPlugins;

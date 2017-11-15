@@ -1,7 +1,6 @@
 <script>
 
-import {EventBus} from "../../events/eventbus";
-import {DatasetStore} from "../../supports/datasetStore";
+
 
 export default {
   props: {
@@ -26,14 +25,7 @@ export default {
   methods: {
       
       fetchData(primaryKey) {
-        DatasetStore.fetchData(api.fetch + "/" + primaryKey,(response) => {
-            this.$store[dataset.namespace].state =    
-            
-            dataset.data = response.data;
-            if(response.lookups !== undefined) {
-                dataset.lookups = response.lookups;
-            }
-        });
+       
       }
   }
 }

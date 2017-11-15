@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import {EventBus} from "../../events/events";
+    
 
     export default {
         name: "vFormDialog",
