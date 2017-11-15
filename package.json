@@ -1,26 +1,17 @@
 {
-  "name": "vue-bootstrap-datetimepicker",
-  "version": "4.1.0",
-  "description": "Vue.js component for bootstrap-datetimepicker",
-  "main": "dist/vue-bootstrap-datetimepicker.js",
-  "unpkg": "dist/vue-bootstrap-datetimepicker.min.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ankurk91/vue-bootstrap-datetimepicker.git"
-  },
+  "name": "my-vue2-package",
+  "version": "1.0.0",
+  "description": "Vue.js set component",
+  "main": "dist/v2pack.js",
+  "unpkg": "dist/v2pack.min.js",
+  "repository": {},
   "keywords": [
     "vue",
-    "bootstrap-datetimepicker",
-    "vue-bootstrap-datetimepicker",
-    "datepicker",
-    "timepicker"
+    "bootstrap-tools",
+    "vue-tools"
   ],
-  "author": "ankurk91",
+  "author": "zee",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ankurk91/vue-bootstrap-datetimepicker/issues"
-  },
-  "homepage": "https://github.com/ankurk91/vue-bootstrap-datetimepicker",
   "scripts": {
     "test": "node ./node_modules/jest/bin/jest.js",
     "test:watch": "npm run test -- --watch --onlyChanged --notify",
@@ -31,7 +22,10 @@
     "prepublishOnly": "npm run test && npm run build"
   },
   "dependencies": {
-    "eonasdan-bootstrap-datetimepicker": "^4.17.47"
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "accounting-js": "^1.1.1",
+    "axios": "^0.15.3",
+    "moment": "^2.18.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
