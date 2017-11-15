@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import {EventBus} from "../../events/eventbus";
+    
 
     export default {
         name: "vErrorSpan",

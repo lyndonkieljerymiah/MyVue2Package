@@ -26,12 +26,14 @@ module.exports = {
     'moment-timezone',
     'eonasdan-bootstrap-datetimepicker',
     'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css',
-    'axios'
+    'axios',
+    'lodash',
+    'accounting-js'
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'vue-bootstrap-datetimepicker.min.js',
-    library: 'VueBootstrapDatetimePicker',
+    filename: 'my-vue2-package.min.js',
+    library: 'Vue2Package',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },

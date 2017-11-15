@@ -13,7 +13,7 @@ import VGridView from "./plugins/controls/VGridView";
 import VPagination from "./plugins/controls/VPagination";
 import VLiveView from "./plugins/controls/VLiveView";
 import VComboBox from "./plugins/controls/VComboBox";
-import VDynamicCombo from "./controls/VDynamicCombo"
+import VDynamicCombo from "./plugins/controls/VDynamicCombo"
 import VFormDialog from "./plugins/controls/VFormDialog"
 import VForm from "./plugins/controls/VForm";
 import VInputControl from "./plugins/controls/VInputControl"

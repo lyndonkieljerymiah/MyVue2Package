@@ -33,8 +33,8 @@
 </template>
 <script>
 
-import VNavbar from "../controls/VNavbar.vue"
-import VSidebar from "../containers/VSidebar.vue"
+import VNavbar from "../controls/VNavbar"
+import VSidebar from "./VSidebar";
 
 export default {
     name: "vAdminPanel",

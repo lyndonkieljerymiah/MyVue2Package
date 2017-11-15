@@ -15,7 +15,7 @@ import VGridView from "./controls/VGridView";
 import VPagination from "./controls/VPagination";
 import VLiveView from "./controls/VLiveView";
 import VComboBox from "./controls/VComboBox";
-import VDynamicCombo from "./controls/VDynamicCombo"
+import VDynamicCombo from "./controls/VDynamicCombo";
 import VFormDialog from "./controls/VFormDialog"
 import VForm from "./controls/VForm";
 import VInputControl from "./controls/VInputControl"

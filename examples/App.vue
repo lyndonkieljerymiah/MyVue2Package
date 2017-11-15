@@ -28,15 +28,15 @@
 
           <div class="form-group">
             <label>Select date (basic)</label>
-            <date-picker v-model="form.date" :config="configs.basic" @dp-change="listenToChangeEvent"></date-picker>
+            <v-date-picker v-model="form.date" :config="configs.basic" @dp-change="listenToChangeEvent"></v-date-picker>
           </div>
 
           <div class="form-group">
             <label for="date-time-input">Select date time (wrap)</label>
             <div class="input-group date">
-              <date-picker v-model="form.dateWrap" id="date-time-input"
+              <v-date-picker v-model="form.dateWrap" id="date-time-input"
                            :wrap="true" :config="configs.wrap">
-              </date-picker>
+              </v-date-picker>
               <div class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
               </div>
@@ -46,8 +46,8 @@
           <div class="form-group">
             <label>Select time</label>
             <div class="input-group">
-              <date-picker :config="configs.timePicker" v-model="form.time" :wrap="true"
-                           placeholder="Time"></date-picker>
+              <v-date-picker :config="configs.timePicker" v-model="form.time" :wrap="true"
+                           placeholder="Time"></v-date-picker>
               <div class="input-group-addon">
                 <span class="glyphicon glyphicon-time"></span>
               </div>
@@ -56,11 +56,11 @@
 
           <div class="form-group" :class="{'has-error' : errors.has('date-of-purchase')}">
             <label>Select date (vee-validate)</label>
-            <date-picker v-model="form.dateValidate"
+            <v-date-picker v-model="form.dateValidate"
                          name="date-of-purchase"
                          v-validate="{required:true}"
                          placeholder="Date of purchase"
-            ></date-picker>
+            ></v-date-picker>
             <span v-show="errors.has('date-of-purchase')"
                   class="help-block">{{ errors.first('date-of-purchase') }}</span>
           </div>
@@ -76,12 +76,12 @@
 
           <div class="form-group">
             <label>Select date (localization)</label>
-            <date-picker :config="configs.locale" v-model="form.dateLocale"></date-picker>
+            <v-date-picker :config="configs.locale" v-model="form.dateLocale"></v-date-picker>
           </div>
 
           <div class="form-group">
             <label>Select date (inline)</label>
-            <date-picker :config="configs.inline" v-model="form.dateInline"></date-picker>
+            <v-date-picker :config="configs.inline" v-model="form.dateInline"></v-date-picker>
             <p class="help-block">
               {{form.dateInline}}
             </p>
@@ -91,13 +91,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Start date</label>
-                <date-picker v-model="form.startDate" :config="configs.range" ref="startDate"></date-picker>
+                <v-date-picker v-model="form.startDate" :config="configs.range" ref="startDate"></v-date-picker>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label>End date</label>
-                <date-picker v-model="form.endDate" :config="configs.range" ref="endDate"></date-picker>
+                <v-v-date-picker v-model="form.endDate" :config="configs.range" ref="endDate"></v-v-date-picker>
               </div>
             </div>
           </div>
@@ -145,7 +145,7 @@
             <form method="post" action="/" onsubmit="return false">
               <div class="form-group">
                 <label>Select a date</label>
-                <date-picker v-model="form.dateModal" :config="{format:'LLL'}"></date-picker>
+                <v-date-picker v-model="form.dateModal" :config="{format:'LLL'}"></v-date-picker>
               </div>
               <pre>{{form.dateModal}}</pre>
             </form>
@@ -164,7 +164,7 @@
 <script type="text/javascript">
   import Vue from 'vue';
 
-  import datePicker from '../src/index';
+  import myPlugins from '../src/index';
   import moment from 'moment';
   import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css';
 
@@ -214,7 +214,7 @@
       }
     },
     components: {
-      datePicker
+      myPlugins
     },
     methods: {
       submit() {
