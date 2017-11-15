@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import {EventBus} from "../../index";
     export default {
         name: "vTabGroup",
         props: ['value'],

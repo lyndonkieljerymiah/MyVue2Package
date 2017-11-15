@@ -5,6 +5,8 @@
 </template>
 
 <script>
+    import {EventBus} from "../../index";
+
     export default {
         name: "vTab",
         props: ["text","tabId"],

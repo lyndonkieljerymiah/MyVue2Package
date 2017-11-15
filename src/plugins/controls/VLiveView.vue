@@ -110,7 +110,7 @@
 
 
 import VPagination from "./VPagination";
-
+import {EventBus} from "../../index";
 const axios = window.axios || require('axios');
 
 export default {
