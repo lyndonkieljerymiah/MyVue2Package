@@ -40,9 +40,7 @@
         props: {
             vtype: String,
             value: {
-                validator: function(val) {
-                    return val==null || typeof val === 'string' || typeof val === 'number'
-                }
+                default: null,
             },
             name, String,
             groupIcon: String,

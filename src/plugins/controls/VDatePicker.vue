@@ -1,21 +1,29 @@
 <template>
+  <div>
     <div class='input-group date' ref="$dtPicker">
         <!-- <div class="datetimepicker-inline" v-if="config.inline"></div>
         <input type="text" class="form-control" v-else> -->
-        <input type='text' :disabled="disabled" class="form-control" name="dpName"/>
+        <input type='text' :disabled="disabled" class="form-control" :name="name"/>
         <span class="input-group-addon">
             <span class="fa fa-calendar"></span>
         </span>
     </div>
+    <template v-if="errorVal !== null">
+        <v-error-span v-model="errorVal" :name='name'></v-error-span>
+    </template> 
+  </div>
 </template>
 
 <script>
+
 const jQuery = window.$ || require("jquery");
 const Moment = window.moment || require("moment");
 
 import "eonasdan-bootstrap-datetimepicker";
 
 const events = ["hide", "show", "change", "error", "update"];
+
+import VErrorSpan from "./VErrorSpan";
 
 export default {
   name: "vDatePicker",
@@ -48,8 +56,14 @@ export default {
     wrap: {
       type: Boolean,
       default: false
+    },
+    name: String,
+    errorVal: {
+      type:Object,
+      default: null
     }
   },
+  components: {VErrorSpan},
   data() {
     return {
       initValue: null,
