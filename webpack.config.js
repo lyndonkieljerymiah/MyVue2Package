@@ -28,7 +28,8 @@ module.exports = {
     'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css',
     'axios',
     'lodash',
-    'accounting-js'
+    'accounting-js',
+    'fullcalendar'
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),

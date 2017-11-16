@@ -29,11 +29,6 @@
             label: String,
             propertyObject:{
                 type: Object,
-                default: {
-                    labelClass: 'col-md-3',
-                    controlClass: 'col-md-9',
-                    align: 'text-right'
-                }
             },
             required: Boolean,
             customDisplay: String,

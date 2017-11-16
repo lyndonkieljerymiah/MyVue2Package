@@ -5,7 +5,7 @@
   "main": "dist/my-vue2-package.js",
   "unpkg": "dist/my-vue2-package.min.js",
   "repository": {
-    "type":"git",
+    "type": "git",
     "url": "https://github.com/lyndonkieljerymiah/MyVue2Package.git"
   },
   "keywords": [
@@ -44,6 +44,7 @@
     "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
     "file-loader": "^1.1.5",
+    "fullcalendar": "^3.7.0",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^21.2.1",
     "jquery": "^3.2.1",

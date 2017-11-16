@@ -118,7 +118,7 @@ export default {
     }
   },
   methods: {
-    /**
+      /**
        * Update v-model upon change triggered by date-picker itself
        *
        * @param event

@@ -10,7 +10,7 @@ import VControlWrapper from "./plugins/containers/VControlWrapper.vue";
 import VAdminPanel from "./plugins/containers/VAdminPanel.vue";
 import VSidebar from "./plugins/containers/VSidebar";
 import VPageHeaderBar from "./plugins/containers/VPageHeaderBar";
-import VErrorSpan from "./plugins/controls/VErrorSpan";
+
 
 import VDataView from "./plugins/controls/VDataView";
 import VGridView from "./plugins/controls/VGridView";
@@ -26,6 +26,9 @@ import ProfileImage from "./plugins/controls/ProfileImage";
 import VDatePicker from "./plugins/controls/VDatePicker";
 import VFullSearch from "./plugins/controls/VFullSearch";
 import VLabelControl from "./plugins/controls/VLabelControl";
+import VToolBar from "./plugins/controls/VToolbar";
+import VErrorSpan from "./plugins/controls/VErrorSpan";
+import VCalendar from "./plugins/controls/VCalendar";
 
 
 import {
@@ -51,6 +54,7 @@ const MyPlugins = {
     Vue.component(VGridView.name, VGridView)
     Vue.component(VPagination.name, VPagination)
     Vue.component(VLiveView.name, VLiveView)
+    Vue.component(VToolBar.name,VToolBar)
 
     Vue.component(VComboBox.name, VComboBox)
     Vue.component(VDynamicCombo.name, VDynamicCombo)
@@ -63,6 +67,8 @@ const MyPlugins = {
     Vue.component(VFullSearch.name, VFullSearch)
     Vue.component(VErrorSpan.name, VErrorSpan)
     Vue.component(VLabelControl.name, VLabelControl)
+    Vue.component(VCalendar.name,VCalendar)
+    
 
     Vue.filter('toDateFormat', toDateFormat);
     Vue.filter('toCurrencyFormat', toCurrencyFormat);

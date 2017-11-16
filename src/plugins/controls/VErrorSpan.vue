@@ -1,6 +1,6 @@
 <template>
     <div v-show="value.get(name)">
-        <span class="text-danger"><i class="fa fa-times-rectangle"></i><small>{{value.get(name)}}</small></span>
+        <span class="text-danger"><i class="fa fa-times-rectangle"></i> <small><b>{{value.get(name)}}</b></small></span>
     </div>
 </template>
 
