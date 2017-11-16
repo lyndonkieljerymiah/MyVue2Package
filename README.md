@@ -6,8 +6,10 @@
 
 ## Features
 * LiveView Grid - grid with auto data pull server 
-* DatePicker - originated by ankurk91 (thanks pal) with custom intercface  please see demo [JSFiddle](https://jsfiddle.net/ankurk91/zupazg2u/)
+* DatePicker - originated by ankurk91 with custom interface  please see demo [JSFiddle](https://jsfiddle.net/ankurk91/zupazg2u/)
 * GridView - dynamice table
+* Full Calendar - ver 1
+* Input Control with error Display 
 
 
 ## Installation
@@ -21,7 +23,8 @@ npm install my-vue2-package --save
 * Bootstrap ^3.3.7 (only css)
 * jQuery >=1.8.3 || ^3.2.1
 * [Moment.js](https://momentjs.com/) ^2.18
-* Loddash
+* Lodash
 * accounting-js
 * eonasdan-bootstrap-datetimepicker
+* fullcalendar
  
