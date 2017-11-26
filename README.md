@@ -20,7 +20,7 @@ npm install my-vue2-package --save
 ```
 
 ## Requirements
-* Bootstrap ^3.3.7 (only css)
+* Bootstrap ^3.3.7
 * jQuery >=1.8.3 || ^3.2.1
 * [Moment.js](https://momentjs.com/) ^2.18
 * Lodash

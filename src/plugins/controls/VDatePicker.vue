@@ -1,8 +1,6 @@
 <template>
   <div>
     <div class='input-group date' ref="$dtPicker">
-        <!-- <div class="datetimepicker-inline" v-if="config.inline"></div>
-        <input type="text" class="form-control" v-else> -->
         <input type='text' :disabled="disabled" class="form-control" :name="name"/>
         <span class="input-group-addon">
             <span class="fa fa-calendar"></span>
