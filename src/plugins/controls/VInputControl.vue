@@ -2,7 +2,7 @@
     <div>
         <template v-if="vtype === 'group'">
             <div  class="input-group">
-                <input type='text' class='form-control' :name='name' :value='value'
+                <input type='text' class='form-control' :name='name' :value='value' :disabled="disabled"
                        @input='update($event.target.value)'>
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button" @click.prevent="onClick">
@@ -15,10 +15,10 @@
 
         <template v-else-if="vtype === 'multiline'">
             <textarea  :value="value" :name='name' @input="update($event.target.value)"
-                      class="form-control"></textarea>
+                      class="form-control" :disabled="disabled"></textarea>
         </template>
         <template v-else>
-            <input  type="vtype" :value="value" :name='name' @input="update($event.target.value)"
+            <input  type="vtype" :value="value" :name='name' :disabled="disabled" @input="update($event.target.value)"
                    class="form-control"/>
         </template>
         
@@ -41,6 +41,10 @@
             vtype: String,
             value: {
                 default: null,
+            },
+            disabled: {
+                type: Boolean,
+                default: false
             },
             name, String,
             groupIcon: String,
