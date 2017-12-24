@@ -1,6 +1,6 @@
 <template>
-    <div id="vAlertDialog" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-md">
+    <div id="vAlertDialog" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" @click="close(false)" aria-label="Close"><span
