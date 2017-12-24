@@ -2,10 +2,10 @@
     <div>
         <template v-if="vtype === 'group'">
             <div  class="input-group">
-                <input type='text' class='form-control' :name='name' :value='value' :disabled="disabled"
+                <input type='text' class='form-control' :name='name' :value='value' :readonly="readonly" :disabled="disabled"
                        @input='update($event.target.value)'>
                 <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" @click.prevent="onClick">
+                    <button class="btn btn-default" :disabled="disabled" type="button" @click.prevent="onClick">
                         <i class="fa " :class="groupIcon"></i>
                     </button>
                 </span>
@@ -15,10 +15,10 @@
 
         <template v-else-if="vtype === 'multiline'">
             <textarea  :value="value" :name='name' @input="update($event.target.value)"
-                      class="form-control" :disabled="disabled"></textarea>
+                      class="form-control" :disabled="disabled" :readonly="readonly"></textarea>
         </template>
         <template v-else>
-            <input  type="vtype" :value="value" :name='name' :disabled="disabled" @input="update($event.target.value)"
+            <input  type="vtype" :value="value" :name='name' :disabled="disabled" :readonly="readonly" @input="update($event.target.value)"
                    class="form-control"/>
         </template>
         
@@ -43,6 +43,10 @@
                 default: null,
             },
             disabled: {
+                type: Boolean,
+                default: false
+            },
+            readonly: {
                 type: Boolean,
                 default: false
             },
