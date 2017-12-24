@@ -66,7 +66,7 @@
             }
         },
         beforeMount() {
-            console.log(Object.keys(this.value));
+            //console.log(Object.keys(this.value));
         }
     }
 </script>

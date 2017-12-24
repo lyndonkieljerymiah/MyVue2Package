@@ -30,6 +30,8 @@ import VToolBar from "./plugins/controls/VToolbar";
 import VErrorSpan from "./plugins/controls/VErrorSpan";
 import VCalendar from "./plugins/controls/VCalendar";
 
+import VAlert from "./plugins/helpers/VAlert.vue"
+
 
 import {
   toDateFormat,
@@ -68,6 +70,8 @@ const MyPlugins = {
     Vue.component(VErrorSpan.name, VErrorSpan)
     Vue.component(VLabelControl.name, VLabelControl)
     Vue.component(VCalendar.name,VCalendar)
+
+    Vue.component(VAlert.name,VAlert)
     
 
     Vue.filter('toDateFormat', toDateFormat);
