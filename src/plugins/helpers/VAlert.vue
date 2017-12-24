@@ -31,26 +31,26 @@ export default {
         return {
             dialogTitle: "",
             textContent: "",
-            groupeType: ""
+            groupType: ""
         }
     },
     methods: {
         show() {
-        $("#vAlertDialog").modal("show");
+            $("#vAlertDialog").modal("show");
         },
         close(result) {
-        $("#vAlertDialog").modal("hide");
-        this.$emit("close", result);
+            $("#vAlertDialog").modal("hide");
+            this.$emit("close", result);
         }
     },
     mounted() {
         EventBus.$on("vAlert.show", (dialogTitle,textContent,groupType) => {
         
-        this.textContent = textContent;
-        this.dialogTitle = dialogTitle;
-        this.groupType = groupType;
-        
-        this.show();
+            this.textContent = textContent;
+            this.dialogTitle = dialogTitle;
+            this.groupType = groupType;
+            
+            this.show();
         });
     }
 };
