@@ -47,11 +47,10 @@ export default {
   },
   mounted() {
     EventBus.$on("vAlert.show", (dialogTitle, textContent, groupType) => {
-        
+
       this.textContent = textContent;
       this.dialogTitle = dialogTitle;
       this.groupType = groupType;
-
       this.show();
     });
   }
