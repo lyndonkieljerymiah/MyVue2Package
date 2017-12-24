@@ -13,7 +13,7 @@
             <div class="modal-footer">
                 <div v-if="groupType == 'OkCancel'">
                     <button type="button" class="btn btn-default" @click="close(false)"><i class="fa fa-close"></i>Cancel</button>
-                    <button type="button" class="btn btn-primary"><i class="fa fa-save fa-fw" @click="close(true)"></i>Ok</button>
+                    <button type="button" class="btn btn-primary"  @click="close(true)"><i class="fa fa-save fa-fw"></i>Ok</button>
                 </div>
                 <div v-else>
                     <button type="button" class="btn btn-default" @click="close(false)"><i class="fa fa-close"></i> Ok</button>
