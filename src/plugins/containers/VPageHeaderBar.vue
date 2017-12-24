@@ -1,9 +1,10 @@
 <template>
     <div class="page-header v-page-header-bar">
         <h3 class="title">{{title}}</h3>
-        <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default" @click="onButtonClick('add')"><i class="fa fa-plus"></i> </button>
-            <button type="button" class="btn btn-default" @click="onButtonClick('print')"><i class="fa fa-print"></i> </button>
+        <div v-if="showActionGroup" class="btn-group" role="group" aria-label="...">
+            <button type="button" v-if="showAdd" class="btn btn-default" @click="onButtonClick('add')"><i class="fa fa-plus"></i> </button>
+            <button type="button" v-if="showDelete" class="btn btn-default" @click="onButtonClick('delete')"><i class="fa fa-trash"></i> </button>
+            <button type="button" v-if="showPrint" class="btn btn-default" @click="onButtonClick('print')"><i class="fa fa-print"></i> </button>
         </div>
     </div>
 </template>
@@ -11,7 +12,29 @@
 <script>
 export default {
   name: "vPageHeaderBar",
-  props: ["title"],
+  props: {
+      title: {
+          type: String,
+          default: null
+      },
+      showActionGroup: {
+          type:Boolean,
+          default: true
+      },
+      showAdd: {
+          type:Boolean,
+          default: true
+      },
+      showDelete: {
+          type:Boolean,
+          default: true
+      },
+      showPrint: {
+          type:Boolean,
+          default: true
+      }
+
+  },
   methods: {
       onButtonClick(value) {
           this.$emit('click',value);
