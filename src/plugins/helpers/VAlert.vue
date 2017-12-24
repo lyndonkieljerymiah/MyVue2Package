@@ -41,9 +41,8 @@ export default {
       $("#vAlertDialog").modal("show");
     },
     close(result) {
-      
-      $("#vAlertDialog").modal("hide");
-      this.$emit("close", result);
+        $("#vAlertDialog").modal("hide");
+        EventBus.$emit("vAlert.close", result);
     }
   },
   mounted() {
