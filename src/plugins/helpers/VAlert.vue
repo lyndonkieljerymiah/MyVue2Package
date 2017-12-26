@@ -12,11 +12,11 @@
             </div>
             <div class="modal-footer">
                 <div v-if="groupType == 'OkCancel'">
-                    <button type="button" class="btn btn-default" @click="close(false)"><i class="fa fa-close"></i>Cancel</button>
-                    <button type="button" class="btn btn-primary"  @click="close(true)"><i class="fa fa-save fa-fw"></i>Ok</button>
+                    <button type="button" class="btn btn-default" @click="close(false)"> Cancel</button>
+                    <button type="button" class="btn btn-primary"  @click="close(true)"> Ok</button>
                 </div>
                 <div v-else>
-                    <button type="button" class="btn btn-default" @click="close(false)"><i class="fa fa-close"></i> Ok</button>
+                    <button type="button" class="btn btn-default" @click="close(false)"> Ok</button>
                 </div>
             </div>
         </div>
@@ -41,17 +41,17 @@ export default {
       $("#vAlertDialog").modal("show");
     },
     close(result) {
-        $("#vAlertDialog").modal("hide");
-        EventBus.$emit("vAlert.close", result);
+      $("#vAlertDialog").modal("hide");
+      EventBus.$emit("vAlert.close", result);
     }
   },
   mounted() {
-    EventBus.$on("vAlert.show", (dialogTitle, textContent, groupType) => {
 
-      this.textContent = textContent;
-      this.dialogTitle = dialogTitle;
-      this.groupType = groupType;
-      this.show();
+    EventBus.$on("vAlert.show", (dialogTitle, textContent, groupType) => {
+        this.textContent = textContent;
+        this.dialogTitle = dialogTitle;
+        this.groupType = groupType;
+        this.show();
     });
   }
 };

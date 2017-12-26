@@ -122,6 +122,8 @@ export class ErrorValidations {
     };
   }
 
+  
+
   get(field) {
     if (this.errors[field]) {
       if (this.errors[field] instanceof Array) {

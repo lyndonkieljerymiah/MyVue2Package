@@ -2,8 +2,13 @@
     <div>
         <template v-if="vtype === 'group'">
             <div  class="input-group">
-                <input type='text' class='form-control' :name='name' :value='value' :readonly="readonly" :disabled="disabled"
-                       @input='update($event.target.value)'>
+                <input type='text' class='form-control' 
+                    :name='name' 
+                    :value='value' 
+                    :readonly="readonly" 
+                    :disabled="disabled"
+                    :required="required"
+                    @input='update($event.target.value)'>
                 <span class="input-group-btn">
                     <button class="btn btn-default" :disabled="disabled" type="button" @click.prevent="onClick">
                         <i class="fa " :class="groupIcon"></i>
@@ -14,11 +19,23 @@
         </template>
 
         <template v-else-if="vtype === 'multiline'">
-            <textarea  :value="value" :name='name' @input="update($event.target.value)"
-                      class="form-control" :disabled="disabled" :readonly="readonly"></textarea>
+            <textarea  
+                :value="value" 
+                :name="name" 
+                :required="required"
+                :disabled="disabled" 
+                :readonly="readonly"
+                @input="update($event.target.value)"
+                      class="form-control" ></textarea>
         </template>
         <template v-else>
-            <input  type="vtype" :value="value" :name='name' :disabled="disabled" :readonly="readonly" @input="update($event.target.value)"
+            <input  type="vtype" 
+                :value="value" 
+                :name='name' 
+                :disabled="disabled" 
+                :readonly="readonly" 
+                :required="required"
+                @input="update($event.target.value)"
                    class="form-control"/>
         </template>
         
@@ -50,6 +67,10 @@
                 type: Boolean,
                 default: false
             },
+            required: {
+                type:Boolean,
+                default: false
+            },
             name, String,
             groupIcon: String,
             errorVal: {
@@ -67,6 +88,8 @@
         },
         beforeMount() {
             //console.log(Object.keys(this.value));
+            //check validation if enabled
+
         }
     }
 </script>
