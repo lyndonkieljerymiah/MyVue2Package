@@ -1,6 +1,6 @@
 {
   "name": "my-vue2-package",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Vue.js set component",
   "main": "dist/my-vue2-package.js",
   "unpkg": "dist/my-vue2-package.min.js",
