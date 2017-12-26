@@ -28,6 +28,7 @@
                 @input="update($event.target.value)"
                       class="form-control" ></textarea>
         </template>
+        
         <template v-else>
             <input  type="vtype" 
                 :value="value" 
