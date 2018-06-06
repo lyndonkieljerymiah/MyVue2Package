@@ -16,7 +16,7 @@
                     <button type="button" class="btn btn-primary"  @click="close(true)"> Ok</button>
                 </div>
                 <div v-else>
-                    <button type="button" class="btn btn-default" @click="close(false)"> Ok</button>
+                    <button type="button" class="btn btn-default" @click="close(true)"> Ok</button>
                 </div>
             </div>
         </div>
@@ -46,12 +46,13 @@ export default {
     }
   },
   mounted() {
-
     EventBus.$on("vAlert.show", (dialogTitle, textContent, groupType) => {
+
         this.textContent = textContent;
         this.dialogTitle = dialogTitle;
         this.groupType = groupType;
         this.show();
+        
     });
   }
 };

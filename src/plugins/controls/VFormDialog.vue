@@ -55,8 +55,8 @@ export default {
     });
   },
   mounted() {
-    EventBus.$on(this.modalId + ".show", () => {
-      this.show();
+    EventBus.$on(this.modalId + ".show", (values) => {
+      this.show(values);
     });
 
     EventBus.$on(this.modalId + ".close", () => {
@@ -67,10 +67,10 @@ export default {
     onSubmit(result) {
       this.$emit("submit");
     },
-    show() {
+    show(values) {
       $("#" + this.modalId).modal("show");
       this.value.clearAll();
-      this.$emit("onShow");
+      this.$emit("onShow",values);
     },
     close() {
       $("#" + this.modalId).modal("hide");

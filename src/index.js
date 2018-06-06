@@ -1,5 +1,3 @@
-
-
 window._ = window._ || require('lodash');
 
 import VDialog from "./plugins/containers/VDialog.vue";
@@ -10,7 +8,6 @@ import VControlWrapper from "./plugins/containers/VControlWrapper.vue";
 import VAdminPanel from "./plugins/containers/VAdminPanel.vue";
 import VSidebar from "./plugins/containers/VSidebar";
 import VPageHeaderBar from "./plugins/containers/VPageHeaderBar";
-
 
 import VDataView from "./plugins/controls/VDataView";
 import VGridView from "./plugins/controls/VGridView";
@@ -56,7 +53,7 @@ const MyPlugins = {
     Vue.component(VGridView.name, VGridView)
     Vue.component(VPagination.name, VPagination)
     Vue.component(VLiveView.name, VLiveView)
-    Vue.component(VToolBar.name,VToolBar)
+    Vue.component(VToolBar.name, VToolBar)
 
     Vue.component(VComboBox.name, VComboBox)
     Vue.component(VDynamicCombo.name, VDynamicCombo)
@@ -69,10 +66,10 @@ const MyPlugins = {
     Vue.component(VFullSearch.name, VFullSearch)
     Vue.component(VErrorSpan.name, VErrorSpan)
     Vue.component(VLabelControl.name, VLabelControl)
-    Vue.component(VCalendar.name,VCalendar)
+    Vue.component(VCalendar.name, VCalendar)
 
-    Vue.component(VAlert.name,VAlert)
-    
+    Vue.component(VAlert.name, VAlert)
+
 
     Vue.filter('toDateFormat', toDateFormat);
     Vue.filter('toCurrencyFormat', toCurrencyFormat);
@@ -87,7 +84,6 @@ export const cloneObject = (objInstance) => {
     return JSON.parse(JSON.stringify(objInstance));
   else
     return false;
-
 }
 
 //copied value
@@ -104,6 +100,66 @@ export const copiedValue = (source, target, exclude = new Array()) => {
 }
 
 
+//finding node
+export const findNode = (items,comparator,key) => {
+  return _.find(items,(item) => {
+    return `item.${key}` == `comparator.${key}`;
+  });
+}
+
+
+
+
+//validation
+export const validation = (function () {
+
+  function duplicate(entities, value, field, excludeSelf) {
+
+    if (entities.length === 0) return false;
+
+    for (let i = 0; i < entities.length; i++) {
+      let item = entities[i];
+      if (excludeSelf) {
+        if (item._hash === excludeSelf) {
+          continue;
+        }
+      }
+
+      if (item[field] === value) return true;
+    }
+
+    return false;
+  }
+
+  function validate(entities, value, field, excludeSelf = null) {
+
+    let isDuplicate = duplicate(entities, value, field);
+
+    return new Promise((resolved, reject) => {
+      if (isDuplicate)
+        reject();
+      else
+        resolved();
+    });
+  }
+
+  return {
+    validate: validate,
+    duplicate: function (entities, value, field, excludeSelf = null) {
+
+      let isDuplicate = duplicate(entities, value, field, excludeSelf);
+
+      return new Promise((resolved, reject) => {
+        if (isDuplicate)
+          reject();
+        else
+          resolved();
+      });
+    }
+  }
+})();
+
+
 //error validation class
 export class ErrorValidations {
 
@@ -113,23 +169,25 @@ export class ErrorValidations {
     this.exceptions = {
       errors: [],
       add: function (name, description) {
-        that.errorExceptions
-          .errors.push({
+        that.errorExceptions.errors.push({
             name: name,
             description: description
-          });
+        });
       }
     };
   }
-  
+
   get(field) {
+    
     if (this.errors[field]) {
       if (this.errors[field] instanceof Array) {
         return this.errors[field][0];
-      } else {
+      } 
+      else {
         return this.errors[field];
       }
     }
+
     return "";
   }
 
@@ -139,8 +197,8 @@ export class ErrorValidations {
 
   clear(field) {
     if (this.errors[field]) {
-        this.errors[field] = '';
-        delete this.errors[field][0];
+      this.errors[field] = '';
+      delete this.errors[field][0];
     }
   }
 

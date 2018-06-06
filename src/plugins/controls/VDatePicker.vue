@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class='input-group date' ref="$dtPicker">
-        <input type='text' :disabled="disabled" class="form-control" :name="name"/>
+        <input type='text' :disabled="disabled" class="form-control" :name="name" :value="value"/>
         <span class="input-group-addon">
             <span class="fa fa-calendar"></span>
         </span>
@@ -16,11 +16,8 @@
 
 const jQuery = window.$ || require("jquery");
 const Moment = window.moment || require("moment");
-
 import "eonasdan-bootstrap-datetimepicker";
-
 const events = ["hide", "show", "change", "error", "update"];
-
 import VErrorSpan from "./VErrorSpan";
 
 export default {
@@ -120,10 +117,10 @@ export default {
       this.dp && this.dp.date(newValue || null);
     },
     /**
-       * Watch for any change in options and set them
-       *
-       * @param newConfig Object
-       */
+     * Watch for any change in options and set them
+     *
+     * @param newConfig Object
+     */
     config(newConfig) {
       this.dp &&
         this.dp.options(Object.assign({}, this.dp.options(), newConfig));
